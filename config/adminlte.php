@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'layout_topnav' => true,
+    'layout_topnav' => false, //para cambiar la vista del menu a horizontal(true)
     'layout_boxed' => null,
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
@@ -234,13 +234,6 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -291,16 +284,6 @@ return [
             ],
         ],
         ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
         [
             'text'       => 'information',
             'icon_color' => 'cyan',
