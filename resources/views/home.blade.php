@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Vista principal</h1>
+    <h1>Vista principal de los procesos y donde se pueden crear procesos</h1>
 @stop
 
 @section('content')

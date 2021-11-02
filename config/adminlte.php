@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Panel',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Abogados</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-1',
     'logo_img_xl' => null,
@@ -126,7 +126,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-primary elevation-1',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -238,6 +238,11 @@ return [
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Procesos',
+            'url'  => 'procesos',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

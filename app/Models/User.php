@@ -18,7 +18,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'nombre',
+        'telefono',
         'email',
+        'genero',
+        'fechaNac',
+        'tipo',
         'password',
     ];
 
@@ -40,4 +45,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tipos(){
+        return $this->belongsToMany(TipoUser::class, 'user_tipo_users');
+    }
+
+    public function esProcurador(){
+        return $this->belongsToMany(Proceso::class, 'procurador_procesos');
+    }
 }
