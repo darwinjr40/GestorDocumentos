@@ -21,7 +21,6 @@
                     <th scope="col">ID</th>
                     <th scope="col">Nombre de proceso</th>
                     <th scope="col">jurisdiccion</th>
-                    <th scope="col">carátula</th>
                     <th scope="col">tipo</th>
                     <th scope="col">objeto</th>
                     <th scope="col">Acciones</th>
@@ -34,11 +33,8 @@
                         <td>{{$proceso->id}}</td>
                         <td>{{$proceso->nombre}}</td>
                         <td>{{$proceso->jurisdiccion}}</td>
-                        <td>{{$proceso->caratula}}</td>
                         <td>{{$proceso->tipo}}</td>
                         <td>{{$proceso->objeto}}</td>
-                        <td>{{$proceso->objeto}}</td>
-
 
                         <td>
                             <form action="{{route('procesos.destroy', $proceso)}}" method="post">
