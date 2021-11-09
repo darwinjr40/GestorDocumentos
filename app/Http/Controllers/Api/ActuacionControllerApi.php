@@ -74,6 +74,7 @@ class ActuacionControllerApi extends Controller
     }
 
     public function upload2(Request $request){
+        return $request;
         // return response()->json(['message' => 'entra al método upload']);
         // return $request;
         if($request->hasFile('file')){
