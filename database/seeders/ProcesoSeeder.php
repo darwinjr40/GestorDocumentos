@@ -22,6 +22,9 @@ class ProcesoSeeder extends Seeder
         $proceso->objeto = 'Ejecucion hipotecaria';
         $proceso->cantidadFojas = 20;
         $proceso->year = 2021;
+        $proceso->numeroCausa = 171819;
+        $proceso->tribunal = 'Juzgado de instrucion en lo civil';
+        $proceso->estado = 'En proceso';
         $proceso->userId = 1;
         $proceso->userJuezId = 8;
         $proceso->save();
@@ -34,6 +37,9 @@ class ProcesoSeeder extends Seeder
         $proceso->objeto = 'Ejecucion prendaria';
         $proceso->cantidadFojas = 20;
         $proceso->year = 2021;
+        $proceso->numeroCausa = 291817;
+        $proceso->tribunal = 'Juzgado publico civil';
+        $proceso->estado = 'En proceso';
         $proceso->userId = 1;
         $proceso->userJuezId = 9;
 
@@ -48,6 +54,9 @@ class ProcesoSeeder extends Seeder
         $proceso->objeto = 'Ejecucion de resoluciones administrativas';
         $proceso->cantidadFojas = 20;
         $proceso->year = 2021;
+        $proceso->numeroCausa = 373839;
+        $proceso->tribunal = 'Juzgado publico comercial de la ciudad de El alto';
+        $proceso->estado = 'En proceso';
         $proceso->userId = 2;
         $proceso->userJuezId = 10;
 
@@ -61,6 +70,9 @@ class ProcesoSeeder extends Seeder
         $proceso->objeto = 'Ejecucion de resoluciones judiciales';
         $proceso->cantidadFojas = 20;
         $proceso->year = 2021;
+        $proceso->numeroCausa = 474849;
+        $proceso->tribunal = 'Juzgado publico comercial de Santa Cruz';
+        $proceso->estado = 'En proceso';
         $proceso->userId = 2;
         $proceso->userJuezId = 10;
 
@@ -74,6 +86,9 @@ class ProcesoSeeder extends Seeder
         $proceso->objeto = 'Cobro de alquileres';
         $proceso->cantidadFojas = 20;
         $proceso->year = 2021;
+        $proceso->numeroCausa = 515849;
+        $proceso->tribunal = 'Juzgado publico comercial de Santa Cruz';
+        $proceso->estado = 'En proceso';
         $proceso->userId = 3;
         $proceso->userContrarioId = 1;
         $proceso->userJuezId = 10;

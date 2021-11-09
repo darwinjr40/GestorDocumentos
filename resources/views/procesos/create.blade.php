@@ -10,7 +10,7 @@
     <form action="{{route('procesos.store')}}" method="POST">
         @csrf
         <label for="nombre" >Ingrese el nombre del nuevo proceso</label>
-        <input type="text" name="nombre" class="form-control" placeholder="nombre">
+        <input type="text" name="nombre" class="form-control" placeholder="nombre" value="{{old('nombre')}}">
         @error('nombre')
         <small>*{{$message}}</small>
         <br><br>
@@ -18,7 +18,7 @@
         <br>
 
         <label for="caratula" >Ingrese la carátula del proceso</label>
-        <input type="text" name="caratula" class="form-control" placeholder="nombre">
+        <input type="text" name="caratula" class="form-control" value="{{old('caratula')}}">
         @error('caratula')
         <small>*{{$message}}</small>
         <br><br>
@@ -70,7 +70,7 @@
         <br>
 
         <label for="numeroCausa" >Ingrese el numero de causa asignado</label>
-        <input type="text" name="numeroCausa" class="form-control" placeholder="Nº">
+        <input type="text" name="numeroCausa" class="form-control" value="{{old('numeroCausa')}}">
         @error('numeroCausa')
         <small>*{{$message}}</small>
         <br><br>
@@ -78,7 +78,7 @@
         <br>
 
         <label for="tribunal" >Ingrese el tribunal</label>
-        <input type="text" name="tribunal" class="form-control" placeholder="">
+        <input type="text" name="tribunal" class="form-control" value="{{old('tribunal')}}">
         @error('tribunal')
         <small>*{{$message}}</small>
         <br><br>
@@ -86,7 +86,7 @@
         <br>
 
         <label for="ciJuez" >Ingrese el ci del juez a cargo del proceso</label>
-        <input type="text" name="ciJuez" class="form-control" placeholder="">
+        <input type="text" name="ciJuez" class="form-control" value="{{old('ciJuez')}}">
         @error('ciJuez')
         <small>*{{$message}}</small>
         <br><br>

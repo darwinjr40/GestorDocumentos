@@ -21,6 +21,7 @@ class CreateActuacionesTable extends Migration
             $table->string('tipo');
             $table->string('tipoArchivo');
             $table->dateTime('fecha')->nullable();
+            $table->string('importante')->nullable();
             $table->unsignedBigInteger('procesoId');
             $table->foreign('procesoId')->references('id')->on('procesos')->onDelete('cascade');
             $table->timestamps();

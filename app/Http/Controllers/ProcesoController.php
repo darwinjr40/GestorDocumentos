@@ -112,6 +112,11 @@ class ProcesoController extends Controller
         //actuaciones del proceso
         $actuaciones = DB::table('actuaciones')->where('procesoId', $id)->orderBy('created_at', 'desc')->get();
         // return $actuaciones;
+        if(DB::table('users')->where('id', $proceso->userJuezId)->exists())
+            $juez = DB::table('users')->where('id', $proceso->userJuezId)->value('nombre');
+        else{
+            $juez = '';
+        }
 
         foreach ($lista as $e) {
             if($e->procesoId == $id){
@@ -121,7 +126,7 @@ class ProcesoController extends Controller
         // return $procuradores;
         // return $procuradores;
         $user = Auth::user();
-        return view('procesos.show', compact('proceso', 'partes', 'procuradores', 'actuaciones', 'user'));
+        return view('procesos.show', compact('proceso', 'partes', 'procuradores', 'actuaciones', 'user', 'juez'));
     }
 
     /**

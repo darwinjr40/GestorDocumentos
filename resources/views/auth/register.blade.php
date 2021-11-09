@@ -54,6 +54,23 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="tipo" class="col-md-4 col-form-label text-md-right">Seleccione el tipo de usuario</label>
+
+                            <div class="col-md-6">
+                                <select name="tipo" id="tipo" class="form-control">
+                                    <option value= 1 >Abogado</option>
+                                    <option value= 3 >Juez</option>
+                                </select>
+
+                                @error('tipo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('email') }}</label>
 
                             <div class="col-md-6">

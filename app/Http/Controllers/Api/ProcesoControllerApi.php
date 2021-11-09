@@ -21,4 +21,9 @@ class ProcesoControllerApi extends Controller
         }
         return $procesos;
     }
+
+    public function getProcesosJueces($userId){
+        $procesos = DB::table('procesos')->where('userJuezId', $userId)->get();
+        return $procesos;
+    }
 }

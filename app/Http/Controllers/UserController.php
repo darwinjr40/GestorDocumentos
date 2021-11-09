@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class UserController extends Controller
 {
@@ -91,6 +94,7 @@ class UserController extends Controller
             'ci' => 'required|unique:users',
             'email' => 'required',
             'telefono' => 'required',
+            'tipo' => 'required',
             'genero' => 'required',
             'password' => 'required|min:4',
        ]);
@@ -100,14 +104,22 @@ class UserController extends Controller
        $user->name = $request->name;
        $user->nombre = $request->nombre;
        $user->telefono = $request->telefono;
+       $user->tipoId = $request->tipo;
        $user->ci = $request->ci;
        $user->email = $request->email;
        $user->fechaNac = $request->fechaNac;
        $user->genero = $request->genero;
        $user->password = bcrypt($request->password);
-       $user->tipo = 1;
+       $user->tipoId = $request->tipo;
        $user->save();
 
        return redirect()->route('home'); 
+    }
+
+    public function perfil(){
+        $user = Auth::user();
+        $tipo = DB::table('tipos_user')->where('id', $user->tipoId)->first();
+
+        return view('usuarios.perfil', compact('user', 'tipo'));
     }
 }

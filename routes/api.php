@@ -34,9 +34,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //ACTUACIONES
-Route::post('subirFile', [ActuacionControllerApi::class, 'upload']);
+Route::post('subirFile', [ActuacionControllerApi::class, 'upload2']);
+Route::get('getFiles/{procesoId}', [ActuacionControllerApi::class, 'getFiles']);
+Route::get('getActuaciones/{procesoId}', [ActuacionControllerApi::class, 'getActuaciones']);
+
+
 
 
 //PROCESOS
 Route::get('procesos/{userId}', [ProcesoControllerApi::class, 'getProcesos']);
+Route::get('procesos/juez/{userId}', [ProcesoControllerApi::class, 'getProcesosJueces']);
+
 

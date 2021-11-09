@@ -20,9 +20,9 @@ class AbogadoController extends Controller
         //
     }
 
-    public function asignarProcurador($id){
+    public function asignarAbogadoContrario($id){
         $proceso = Proceso::find($id);
-        return view('abogados.asignarProcurador', compact('proceso'));
+        return view('abogados.asignarAbogadoContrario', compact('proceso'));
     }
     /**
      * Show the form for creating a new resource.
@@ -46,13 +46,15 @@ class AbogadoController extends Controller
             'ci' => 'required',
             'procesoId' => 'required',
         ]);
+        // return $request;
 
-        if (!DB::table('users')->where('ci', $request->ci)->exists()) {
+        if (!(DB::table('users')->where('ci', $request->ci)->exists())) {
             return Redirect::back()->with('msg', 'No existe un usuario con ese número de ci');
         }
         $user = User::where('ci', $request->ci)->first();
         $proceso = Proceso::find($request->procesoId);
         $proceso->userContrarioId = $user->id;
+        $proceso->save();
         return redirect()->route('procesos.show', $request->procesoId);
     }
 

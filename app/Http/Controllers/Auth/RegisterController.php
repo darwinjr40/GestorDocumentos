@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'telefono' => ['required', 'string'],
             'genero' => ['required', 'string'],
             // 'fechaNac' => ['required'],
-            'tipo' => ['required'],
+            // 'tipoId' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
@@ -70,6 +70,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        return $data;
+        $user = new User();
+        $user->name = $data['name'];
+        $user->nombre = $data['nombre'];
+        $user->ci = $data['ci'];
+        $user->genero = $data['genero'];
+        $user->telefono = $data['telefono'];
+        $user->fechaNac = $data['fechaNac'];
+        $user->email = $data['email'];
+        $user->password = $data['password'];
+        $user->tipoId = 1;
+        $user->save();
+        return redirect()->route('procesos.index');
+
+
+
         return User::create([
             'name' => $data['name'],
             'nombre' => $data['nombre'],
@@ -77,7 +93,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'genero' => $data['genero'],
             // 'fechaNac' => $data['fechaNac'],
-            'tipo' => 1,
+            'tipoId' => 1,
             'password' => Hash::make($data['password']),
         ]);
     }

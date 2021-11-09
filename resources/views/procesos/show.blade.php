@@ -12,24 +12,49 @@
         <label for="nombre" >Nombre:</label>
         <input type="text" value="{{$proceso->nombre}}" name="nombre" class="form-control" placeholder="nombre" readonly>
     </div>
-    <div class="col-sm-6">
+    {{-- <div class="col-sm-6">
         <label for="caratula" >Carátula:</label>
         <input type="text" value="{{$proceso->caratula}}" name="caratula" class="form-control" placeholder="nombre" readonly>
 
-    </div>
-    <div class="col-sm-6">
+    </div> --}}
+    <div class="col-sm-4">
         <label for="jurisdiccion">Jurisdicción</label>
         <input type="text" value="{{$proceso->jurisdiccion}}" name="jurisdiccion" class="form-control" placeholder="nombre" readonly>
         
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <label for="tipo" >Tipo de proceso: </label>
         <input type="text" value="{{$proceso->tipo}}" name="tipo" class="form-control" placeholder="nombre" readonly>
         
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <label for="objeto" >Objeto</label>
         <input type="text" value="{{$proceso->objeto}}" name="objeto" class="form-control" placeholder="nombre" readonly>
+        
+    </div>
+    <div class="col-sm-4">
+        <label for="numeroCausa" >Numero de Causa:</label>
+        <input type="text" value="{{$proceso->numeroCausa}}" name="objeto" class="form-control" placeholder="" readonly>
+        
+    </div>
+    <div class="col-sm-4">
+        <label for="year" >año</label>
+        <input type="text" value="{{$proceso->year}}" name="year" class="form-control" placeholder="nombre" readonly>
+        
+    </div>
+    <div class="col-sm-4">
+        <label for="tribunal" >Tribunal</label>
+        <input type="text" value="{{$proceso->tribunal}}" name="objeto" class="form-control" readonly>
+        
+    </div>
+    <div class="col-sm-4">
+        <label for="estado" >estado</label>
+        <input type="text" value="{{$proceso->estado}}" name="objeto" class="form-control" readonly>
+        
+    </div>
+    <div class="col-sm-6">
+        <label for="juez" >Juez</label>
+        <input type="text" value="{{$juez}}" name="objeto" class="form-control" readonly>
         
     </div>
     
@@ -41,7 +66,7 @@
 {{-- ACTUACIONES --}}
 <div class="card">
     <div class="card-header">
-        <a href="{{-- {{ route('procuradores.create2', $proceso->id)}} --}}" {{-- class="btn btn-primary btb-sm" --}}>Actuaciones del caso</a>
+        <a href="{{-- {{ route('procuradores.create2', $proceso->id)}} --}}" {{-- class="btn btn-primary btb-sm" --}}>Expediente del caso</a>
     </div>
 </div>
 
@@ -70,7 +95,7 @@
                     <td>{{$actuacion->tipoArchivo}}</td>
                     <td>{{$actuacion->created_at}}</td>
                     <td>
-                        <a href="" target="_blank">Abrir archivo</a>
+                        <a href="{{$actuacion->path}}" target="_blank">Abrir archivo</a>
                     </td>
                 </tr>
                 @endforeach
@@ -185,7 +210,7 @@
 
 <div>
     @if ($proceso->userId == $user->id)
-    <a href="{{route('abogados.asignarProcurador', $proceso->id)}}" class="btn btn-primary btb-sm">Registrar abogado parte contraria</a>
+    <a href="{{route('abogados.asignarAbogado', $proceso->id)}}" class="btn btn-primary btb-sm">Registrar abogado parte contraria</a>
         
     @else
     <a href="" class="btn btn-primary btb-sm"></a>

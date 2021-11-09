@@ -23,6 +23,8 @@ Route::get('/', function () {
     return redirect('/login');
 });
 Route::post('registerUser', [UserController::class, 'register'])->name('users.register');
+Route::get('perfil', [UserController::class, 'perfil'])->name('users.perfil');
+
 
 Auth::routes();
 
@@ -44,6 +46,6 @@ Route::get('actuaciones/{procesoId}', [ActuacionController::class, 'getFiles'])-
 
 //Asignar abogado parte contraria
 Route::resource('abogados', AbogadoController::class)->names('abogados');
-Route::get('abogados/asignarAbogado/{procesoId}', [AbogadoController::class, 'asignarProcurador'])->name('abogados.asignarProcurador');
+Route::get('abogados/asignarAbogado/{procesoId}', [AbogadoController::class, 'asignarAbogadoContrario'])->name('abogados.asignarAbogado');
 
 
